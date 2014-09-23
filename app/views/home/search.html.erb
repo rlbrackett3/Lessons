@@ -1,0 +1,12 @@
+<% if @users.count > 0 %>
+  <h1>Users</h1>
+  <ul>
+    <% @users.each do |u| %>
+      <li><%= link_to u.name, user_path(u) %></li>
+    <% end %>
+  </ul>
+
+<% else %>
+  <h3>Opps! No Users match your search</h3>
+<% end %>
+

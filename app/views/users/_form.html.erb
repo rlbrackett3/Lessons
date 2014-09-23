@@ -1,1 +1,20 @@
 <h3>Users Form</h3>
+<%= form_for @user do |f| %>
+  <fieldset>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="fields">
+      <%= f.label :bio %>
+      <%= f.text_area :bio %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </fieldset>
+<% end %>
