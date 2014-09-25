@@ -19,12 +19,13 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  # /users/:id/edit
   def edit
     @user = User.find(params[:id])
   end
 
   def create
-    # puts "====== PARAMS ARE ======" + params.inspect
+    puts "====== PARAMS ARE ======" + params.inspect
 
     @user = User.new(params[:user])
     if @user.save

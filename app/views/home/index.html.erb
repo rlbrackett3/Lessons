@@ -3,7 +3,8 @@
 <div class="search">
   <%= form_tag "/search", method: "get" do %>
     <%= label_tag :query, "Search:" %>
-    <%= search_field :user, :name %>
+    <%= text_field_tag :query %>
+    
     <%= submit_tag "Submit", id: "submit", name: nil, class: "form_submit", disabled: false, disable_with: "Please wait..." %>
   <% end %>
 </div>

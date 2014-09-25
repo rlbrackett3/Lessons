@@ -5,8 +5,9 @@ class HomeController < ApplicationController
   end
 
   def search
-    query = params[:user][:name]
-    @users = User.where("name like ?", "%#{query}%")
+    # query = params[:user][:name]
+    q = params[:query]
+    @users = User.where("name like ?", "%#{q}%")
   end
 
 end

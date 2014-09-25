@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'search' => 'home#search'
-  get 'home' => 'home#index'
+  get 'home' => 'home#index', as: 'home'
 
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
