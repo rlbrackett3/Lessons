@@ -25,9 +25,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    puts "====== PARAMS ARE ======" + params.inspect
-
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
+    # @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "Your account was created successfully."
       redirect_to user_path @user
@@ -40,7 +39,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(params[:user])
+    if @user.update(user_params)
       flash[:notice] = "Your account was updated successfully."
       redirect_to user_path @user
     else
@@ -59,4 +58,11 @@ class UsersController < ApplicationController
     end
     redirect_to users_path
   end
+
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :bio, :password)
+    end
+
 end
