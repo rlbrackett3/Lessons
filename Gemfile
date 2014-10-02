@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # gem 'bcrypt', require: 'bcrypt'
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-github'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
