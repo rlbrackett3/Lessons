@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
-  has_secure_password
-  validates :email,     uniqueness: true,
-                        on: :create
-  validates :password,  presence: true,
-                        on: :create,
-                        confirmation: true
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 end

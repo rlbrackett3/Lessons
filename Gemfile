@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'bcrypt', require: 'bcrypt'
+# gem 'bcrypt', require: 'bcrypt'
+
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
