@@ -1,11 +1,11 @@
 class HomeController < ApplicationController
 
   def index
-    
+
   end
 
-  def secrets
-    
+  def secret
+
   end
 
 end
