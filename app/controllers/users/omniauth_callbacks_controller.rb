@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  before_filter :configure_permitted_parameters
+  # before_filter :configure_permitted_parameters
 
   # def facebook
   #   # You need to implement the method below in your model (e.g. app/models/user.rb)
@@ -30,9 +30,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up).push(:provider, :uid)
-    # {|u| u.permit(:email, :password, :password_confirmation, :provider, :uid)}
-    # .push(:provider, :uid)
-  end
+  # def configure_permitted_parameters
+  #   devise_parameter_sanitizer.for(:sign_up).push(:provider, :uid)
+  #   # {|u| u.permit(:email, :password, :password_confirmation, :provider, :uid)}
+  #   # .push(:provider, :uid)
+  # end
 end
