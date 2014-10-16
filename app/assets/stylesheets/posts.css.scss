@@ -1,0 +1,57 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ul#posts {
+  position: relative;
+  float: left;
+  list-style: none;
+  padding: 0;
+
+  li.post {
+    position: relative;
+    float: left;
+    list-style: none;
+    margin-top: 15px;
+    padding-right: 10px;
+
+    .post-title {
+      width: 100%;
+      height: auto;
+      position: relative;
+      float: left;
+      margin-bottom: 5px;
+    }
+
+    .post-date {
+      width: 100%;
+      height: auto;
+      position: relative;
+      float: left;
+      margin: 0 0 5px 0;
+    }
+
+    .post-body {
+      width: 50%;
+      height: auto;
+      position: relative;
+      float: left;
+      font-family: "Georgia", serif;
+    }
+
+    ul.post-links {
+      width: 100%;
+      position: relative;
+      float: left;
+      list-style: none;
+      margin-top: 10px;
+      padding: 0;
+
+      li {
+        position: relative;
+        float: left;
+        list-style: none;
+        padding-right: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<h3>Listing posts</h3>
+<%= link_to 'New Post', new_post_path %>
+<br>
+<%= paginate @posts, remote: true %>
+<ul id="posts">
+  <%= render @posts %>
+</ul>
+<br>
+<%= paginate @posts, remote: true %>
+
+
+
+

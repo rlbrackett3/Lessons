@@ -7,11 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrapper">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <header id="header" class="">
+      <nav>
+        <ul>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Posts', posts_path %></li>
+        </ul>
+      </nav>
+    </header><!-- /header -->
 
-  <%= yield %>
+    <div id="content">
+      <%= yield %>
+    </div>
+
+  </div>
 
 </body>
 </html>
