@@ -7,11 +7,17 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Create a admin user"
-admin = User.create(name: "FooAdmin", password: "foobar", password_confirmation: "foobar", admin: true)
+admin = User.create(name: "FooAdmin", 
+                    password: "foobar", 
+                    password_confirmation: "foobar", 
+                    admin: true)
 puts "Admin user created"
 
 puts "Create a normal user"
-admin = User.create(name: "FooNormal", password: "foobar", password_confirmation: "foobar", admin: false)
+normal = User.create(name: "FooNormal", 
+                      password: "foobar", 
+                      password_confirmation: "foobar", 
+                      admin: false)
 puts "Normal user created"
 
 puts "Generating sample posts"
