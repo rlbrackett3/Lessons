@@ -10,11 +10,18 @@
 
   <tbody>
     <% @users.each do |user| %>
-      <tr>
+      <tr id="user_<%= user.id %>">
+        <td><%= image_tag(user.avatar.url(:thumb), size: "100x100") if user.avatar %></td>
         <td><%= user.name %></td>
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :manage, user %>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Destroy', user, method: :delete,
+                                          data: { confirm: 'Are you sure?' },
+                                          data: { disable_with: "Deleting..." },
+                                          remote: true,
+                                          class: "delete-user" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

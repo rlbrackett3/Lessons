@@ -1,7 +1,8 @@
-<%=simple_form_for @post do |f| %>
+<%=simple_form_for @post, html: { multipart: true }, remote: true do |f| %>
   <%=f.input :title %>
   <%=f.input :body %>
-  <%=f.button :submit %>
+  <%= f.input :image, as: :file %>
+  <%=f.button :submit, data: { disable_with: 'Submitting…' } %>
 <% end %>
 
 

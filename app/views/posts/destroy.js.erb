@@ -1,0 +1,7 @@
+$(document).ready(function () {
+
+  $(".post-delete").on("ajax:complete", function(e) {
+    $(this).closest("li.post").delay("slow").hide();
+  });
+
+});

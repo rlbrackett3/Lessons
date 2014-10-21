@@ -21,9 +21,9 @@ puts "Create a normal user"
 10.times do |n|
   user = User.create(name: "Foo#{n}Normal", password: "foobar", password_confirmation: "foobar", admin: false)
   puts "User created"
-  5.times do |n|
-    user.posts.create(title: "Post Number #{n}", body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.")
-    puts "User Post #{n} created"
+  3.times do |n|
+    post = user.posts.create(title: "Post Number #{n}", body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.")
+    puts "Post #{n} created for #{post.user.name}"
   end
 end
 puts "Normal users created"

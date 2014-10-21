@@ -7,6 +7,10 @@ gem 'cancancan', '~> 1.7'
 gem 'simple_form'
 gem 'country_select'
 
+gem 'paperclip'
+gem 'aws-sdk'
+gem 'remotipart', '~> 1.2'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'

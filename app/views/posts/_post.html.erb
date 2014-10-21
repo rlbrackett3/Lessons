@@ -1,13 +1,14 @@
 <li class="post">
   <h4 class="post-title"><%= post.title %></h4>
   <p class="post-date"><%= post.created_at %></p>
-  <p>Author: <%= post.user.name %></p>
+  <p>Author: <%= post.user.name if post.user %></p>
+  <%= image_tag(post.image.url(:medium)) if post.image.file? %>
   <div class="post-body"><%= post.body %></div>
   <ul class="post-links">
     <li><%= link_to 'Show', post %></li>
     <% if can? :manage, post %>
       <li><%= link_to 'Edit', edit_post_path(post) %></li>
-      <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "post-delete" %></li>
     <% end %>
   </ul>
 </li>
