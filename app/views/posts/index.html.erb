@@ -1,4 +1,9 @@
 <h3>Listing posts</h3>
+
+<div id="post-form">
+  <%= render 'form' %>
+</div>
+
 <%= link_to 'New Post', new_post_path %>
 <br>
 <%= paginate @posts, remote: true %>
