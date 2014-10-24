@@ -4,6 +4,7 @@
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
+<%= image_tag(@user.avatar.url(:medium)) if @user.avatar.file? %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

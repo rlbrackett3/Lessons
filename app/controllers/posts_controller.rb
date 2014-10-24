@@ -6,6 +6,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.order(created_at: :desc).page(params[:page])
+    c = Post.count
+    @random_post = Post.offset(rand(c)).first
+  end
+
+  def random
+
   end
 
   # GET /posts/1

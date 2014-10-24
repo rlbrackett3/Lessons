@@ -34,12 +34,19 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
+    better_errors (2.0.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.2.2)
     cancancan (1.9.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.4)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -52,6 +59,9 @@ GEM
     country_select (2.1.0)
       countries (~> 0.9, >= 0.9.3)
     currencies (0.4.2)
+    debug_inspector (0.0.2)
+    did_you_mean (0.7.0)
+      binding_of_caller
     erubis (2.7.0)
     execjs (2.2.1)
     hike (1.2.3)
@@ -146,9 +156,12 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk
   bcrypt (~> 3.1.7)
+  better_errors
+  binding_of_caller
   cancancan (~> 1.7)
   coffee-rails (~> 4.0.0)
   country_select
+  did_you_mean
   jbuilder (~> 2.0)
   jquery-rails
   kaminari

@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
                         confirmation: true
 
   has_attached_file :avatar,  styles: {
-                                        medium: "300x300",
+                                        medium: "300x300>",
                                         thumb: "100x100>"
                                       },
                               default_url: "/images/:style/default.png"

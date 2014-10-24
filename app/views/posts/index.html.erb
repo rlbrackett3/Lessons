@@ -1,6 +1,11 @@
 <h3>Listing posts</h3>
 <%= link_to 'New Post', new_post_path %>
 <br>
+
+<h3>Random Post of the Day</h3>
+<h1><%= @random_post.title %></h1>
+
+<br>
 <%= paginate @posts, remote: true %>
 <ul id="posts">
   <%= render @posts %>

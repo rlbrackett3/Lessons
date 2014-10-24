@@ -7,7 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Create a admin user"
-admin = User.create(name: "FooAdmin", password: "foobar", password_confirmation: "foobar", admin: true)
+admin = User.create(name: "FooAdmin", 
+                    password: "foobar", 
+                    password_confirmation: "foobar", 
+                    admin: true, 
+                    avatar: File.new("#{Rails.root}/public/images/arnica_button_front_130812.png"))
 puts "Admin user created"
 
 puts "Generating sample posts"

@@ -12,6 +12,14 @@ gem 'aws-sdk'
 gem 'remotipart', '~> 1.2'
 
 
+
+group :development do
+  gem 'did_you_mean'
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use sqlite3 as the database for Active Record

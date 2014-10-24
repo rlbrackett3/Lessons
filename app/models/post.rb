@@ -11,4 +11,8 @@ class Post < ActiveRecord::Base
                                       },
                               default_url: "/images/:style/default.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
+  def post_count
+    count
+  end
 end
