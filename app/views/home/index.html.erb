@@ -1,0 +1,14 @@
+<h1>Welcome Home</h1>
+<h3>The time is <%= Time.now.strftime("%b %e, %l:%M %p") %></h3>
+
+<h3>My Twitter Feed</h3>
+<%= render 'shared/twitter' %>
+
+<h3>My Transactions</h3>
+<ul>
+  <% @transactions.each do |t| %>
+    <li>$<%= t[:amount] %> @ <%= t[:date].strftime("%b %e, %l:%M %p") %></li>
+  <% end %>
+</ul>
+
+<%= link_to "About Myself", "/about" %>
