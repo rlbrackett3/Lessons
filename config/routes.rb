@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/' => 'home#index'
+  get '/' => 'home#index', as: :home
   get '/about' => 'home#about'
   get '/tweets/:id' => 'tweets#show'
   get '/tweets' => 'tweets#index'
