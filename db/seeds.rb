@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts "Creating some users with some posts"
+5.times do |n|
+  user = User.create fname: "Foo#{n}", email: "foo#{n}@bar.com"
+  puts "#{n} Users Created"
+  
+  puts "Creating some posts for #{user}"
+  10.times do |p|
+    user.posts.create title: "Post Number #{n} for #{user.fname}", body: "Hello World"
+  end
+  puts "Posts created"
+end
