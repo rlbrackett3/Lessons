@@ -1,11 +1,16 @@
 label {
-  color: blue;
+  color: green;
+  text-style: bold;
   width: 100%;
   padding: 10px;
+  float: left;
+  position: relative;
 }
 
 input {
   width: 50%;
   height: 50px;
   border: 5px dotted red;
+  float: left;
+  position: relative;
 }

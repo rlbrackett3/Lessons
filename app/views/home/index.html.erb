@@ -1,1 +1,8 @@
 <h3>Home Page</h3>
+
+<% t = Time.now %>
+<%= t.strftime("%H:::%M:::%S")  %>
+
+<%= select_date(Time.now + 10.days) %>
+
+<%= time_ago_in_words(3.minutes.from_now)  %>

@@ -9,11 +9,7 @@ class UsersController < ApplicationController
       @users = User.all
     end
   end
-
-  def search
-    @users = User.where("email like ?", "%#{params[:query]}%")
-  end
-
+  
   def show
     @user = User.find params[:id]
   end
@@ -23,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Yay, User created!"
       redirect_to user_path @user
@@ -39,7 +35,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find params[:id]
-    if @user.update params[:user]
+    if @user.update user_params
       flash[:notice] = "User updated successfully!"
       redirect_to @user
     else
@@ -58,5 +54,14 @@ class UsersController < ApplicationController
     redirect_to root_path
   end 
 
+  # HERE ARE PRIVATE METHODS
+  private
+
+  def user_params
+    params.require(:user).permit( :lname, 
+                                  :fname, 
+                                  :email, 
+                                  :password)
+  end
 
 end
