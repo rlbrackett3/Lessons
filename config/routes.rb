@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
   
-  get '/secret' => 'home#secret'
+  get 'log-in' => 'sessions#new'
+  post 'log-in' => 'sessions#create'
+  delete 'log-out' => 'sessions#destroy', as: :log_out
+
+  resources :users
+
+  # get '/secret' => 'home#secret'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  get '/' => 'home#index'
   root 'home#index'
 
   # Example of regular route:

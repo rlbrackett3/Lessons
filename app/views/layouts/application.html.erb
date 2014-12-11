@@ -11,6 +11,14 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <% if current_user %>
+    <%= link_to "log out", log_out_path, method: :delete %>
+  <% else %>
+    <%= link_to "log in", log_in_path %>
+  <% end %>
+  
+  <%#= link_to "log out", session_path(session[:user_id]), method: :delete %>
+
   <%= yield %>
 
 </body>
