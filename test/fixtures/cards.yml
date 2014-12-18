@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  type: 
+  cc_number: 1
+  cc_code: 1
+  cc_name: MyString
+  cc_date: 2014-12-16
+
+two:
+  user_id: 1
+  type: 
+  cc_number: 1
+  cc_code: 1
+  cc_name: MyString
+  cc_date: 2014-12-16

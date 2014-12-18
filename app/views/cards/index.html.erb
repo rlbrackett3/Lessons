@@ -1,0 +1,35 @@
+<h1>Listing cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Type</th>
+      <th>Cc number</th>
+      <th>Cc code</th>
+      <th>Cc name</th>
+      <th>Cc date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.user_id %></td>
+        <td><%= card.type %></td>
+        <td><%= card.cc_number %></td>
+        <td><%= card.cc_code %></td>
+        <td><%= card.cc_name %></td>
+        <td><%= card.cc_date %></td>
+        <td><%= link_to 'Show', card %></td>
+        <td><%= link_to 'Edit', edit_card_path(card) %></td>
+        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card', new_card_path %>

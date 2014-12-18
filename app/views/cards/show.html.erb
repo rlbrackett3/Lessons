@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @card.user_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @card.type %>
+</p>
+
+<p>
+  <strong>Cc number:</strong>
+  <%= @card.cc_number %>
+</p>
+
+<p>
+  <strong>Cc code:</strong>
+  <%= @card.cc_code %>
+</p>
+
+<p>
+  <strong>Cc name:</strong>
+  <%= @card.cc_name %>
+</p>
+
+<p>
+  <strong>Cc date:</strong>
+  <%= @card.cc_date %>
+</p>
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

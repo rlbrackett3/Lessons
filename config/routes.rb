@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  resources :products
+
+  resources :orders
+
+  resources :cards
+
+  resources :users
+
   get '/' => 'home#index'
   get '/secret' => 'home#secret'
   # The priority is based upon order of creation: first created -> highest priority.
