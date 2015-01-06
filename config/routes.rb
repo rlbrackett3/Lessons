@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'users/create'
+
+  get 'users/new'
+
   get '/' => 'home#index'
   get '/secret' => 'home#secret'
   # The priority is based upon order of creation: first created -> highest priority.
