@@ -6,7 +6,11 @@
   <ul class="post-links">
     <li><%= link_to 'Show', post %></li>
     <% if can? :manage, post %>
-      <li><%= link_to 'Edit', edit_post_path(post) %></li>
+      <li>
+        <%= link_to edit_post_path(post) do %>
+          <p>Edit</p>
+        <% end %>
+      </li>
       <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
     <% end %>
   </ul>
