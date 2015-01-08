@@ -10,19 +10,23 @@
 
   <tbody>
     <% @users.each do |user| %>
-      <tr id="user_<%= user.id %>">
-        <td><%= image_tag(user.avatar.url(:thumb), size: "100x100") if user.avatar %></td>
-        <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <% if can? :manage, user %>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Destroy', user, method: :delete,
-                                          data: { confirm: 'Are you sure?' },
-                                          data: { disable_with: "Deleting..." },
-                                          remote: true,
-                                          class: "delete-user" %></td>
-        <% end %>
-      </tr>
+      <% unless user == current_user %>
+        <tr id="user_<%= user.id %>">
+          <td><%= image_tag(user.avatar.url(:thumb), size: "100x100") if user.avatar %></td>
+          <td><%= user.name %></td>
+          <td><section class="stats"><%= render 'shared/stats', user: user %></section></td>
+          <td><%= render('follow_form', user: user) if session[:user_id] %></td>
+          <td><%= link_to 'Show', user %></td>
+          <% if can? :manage, user %>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td><%= link_to 'Destroy', user, method: :delete,
+                                            data: { confirm: 'Are you sure?' },
+                                            data: { disable_with: "Deleting..." },
+                                            remote: true,
+                                            class: "delete-user" %></td>
+          <% end %>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
